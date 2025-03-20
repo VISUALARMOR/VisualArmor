@@ -1,0 +1,49 @@
+def magic_calculator():
+    """
+    A whimsical calculator that performs basic arithmetic operations.
+    It also includes a "magic" power operation.
+    """
+
+    print("Welcome to the Magic Calculator!")
+
+    while True:
+        print("\nChoose an operation:")
+        print("1. Addition (+)")
+        print("2. Subtraction (-)")
+        print("3. Multiplication (*)")
+        print("4. Division (/)")
+        print("5. Magic Power (**) - raises the first number to the power of the second")
+        print("6. Exit")
+
+        choice = input("Enter your choice (1-6): ")
+
+        if choice == "6":
+            print("Goodbye!")
+            break
+
+        if choice in ("1", "2", "3", "4", "5"):
+            try:
+                num1 = float(input("Enter first number: "))
+                num2 = float(input("Enter second number: "))
+
+                if choice == "1":
+                    print("Result:", num1 + num2)
+                elif choice == "2":
+                    print("Result:", num1 - num2)
+                elif choice == "3":
+                    print("Result:", num1 * num2)
+                elif choice == "4":
+                    if num2 == 0:
+                        print("Error: Division by zero!")
+                    else:
+                        print("Result:", num1 / num2)
+                elif choice == "5":
+                    print("Result:", num1 ** num2)
+
+            except ValueError:
+                print("Invalid input. Please enter numbers.")
+        else:
+            print("Invalid choice. Please enter a number between 1 and 6.")
+
+if __name__ == "__main__":
+    magic_calculator()
